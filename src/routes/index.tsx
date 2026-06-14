@@ -11,9 +11,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Polina Alekseeva — UI/UX & Digital Designer, Prague" },
-      { name: "description", content: "Portfolio of Polina Alekseeva — UI/UX, web and brand designer based in Prague. Selected work for Markedu, Orange Flowers, SpacefyAI and more." },
+      {
+        name: "description",
+        content:
+          "Portfolio of Polina Alekseeva — product and digital designer connecting UX/UI, websites, frontend and business systems.",
+      },
       { property: "og:title", content: "Polina Alekseeva — UI/UX & Digital Designer" },
-      { property: "og:description", content: "Selected work, process and contact. Designer of websites, products and brand systems." },
+      {
+        property: "og:description",
+        content: "Selected product, web and digital systems work by Polina Alekseeva.",
+      },
       { property: "og:type", content: "website" },
     ],
   }),

@@ -1,10 +1,9 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@source "../src";
 
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap");
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-display: "Archivo Black", "Archivo", system-ui, sans-serif;
@@ -47,10 +46,10 @@
   --radius: 0.5rem;
 
   /* dylanbartoli-inspired: dark, high contrast, electric accent */
-  --ink: oklch(0.10 0.005 240);
+  --ink: oklch(0.1 0.005 240);
   --cream: oklch(0.97 0.01 90);
-  --acid: oklch(0.88 0.22 125);   /* electric lime */
-  --ember: oklch(0.72 0.18 50);   /* warm secondary */
+  --acid: oklch(0.88 0.22 125); /* electric lime */
+  --ember: oklch(0.72 0.18 50); /* warm secondary */
   --mist: oklch(0.55 0.01 240);
 
   --background: var(--ink);
@@ -70,7 +69,7 @@
   --accent-foreground: var(--ink);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: var(--cream);
-  --border: oklch(1 0 0 / 0.10);
+  --border: oklch(1 0 0 / 0.1);
   --input: oklch(1 0 0 / 0.14);
   --ring: var(--acid);
 }
@@ -94,7 +93,13 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
-    body, a, button, [role="button"], input, textarea, select {
+    body,
+    a,
+    button,
+    [role="button"],
+    input,
+    textarea,
+    select {
       cursor: none !important;
     }
   }
@@ -106,10 +111,19 @@
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
-  .font-serif { font-family: var(--font-serif); }
-  .font-mono { font-family: var(--font-mono); }
-  .text-balance { text-wrap: balance; }
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+  }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
 
   .link-quiet {
     background-image: linear-gradient(currentColor, currentColor);
@@ -125,7 +139,8 @@
 
   .grain::after {
     content: "";
-    position: absolute; inset: 0;
+    position: absolute;
+    inset: 0;
     pointer-events: none;
     opacity: 0.08;
     mix-blend-mode: overlay;
@@ -135,14 +150,165 @@
   .marquee-track {
     animation: marquee 30s linear infinite;
   }
+  .marquee-track-reverse {
+    animation: marquee-reverse 24s linear infinite;
+  }
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .marquee-track-reverse {
+      animation-duration: 1ms;
+      animation-iteration-count: 1;
+    }
   }
 
   /* outline display variant — for that big stencil hero feel */
   .text-outline {
     -webkit-text-stroke: 1.5px var(--cream);
     color: transparent;
+  }
+
+  .hero-word {
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    cursor: none;
+  }
+
+  .hero-particle-word {
+    line-height: 0.78;
+  }
+
+  .hero-particle-word__text {
+    display: block;
+    white-space: pre;
+    opacity: 0;
+  }
+
+  .hero-particle-word__canvas {
+    position: absolute;
+    inset: -0.08em -0.02em;
+    width: calc(100% + 0.04em);
+    height: calc(100% + 0.16em);
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .about-portrait {
+    position: relative;
+    min-height: 32rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--secondary);
+    isolation: isolate;
+  }
+
+  .about-portrait img {
+    position: absolute;
+    inset: 0;
+    filter: grayscale(1) contrast(1.12) brightness(0.76);
+    transition:
+      filter 700ms ease,
+      transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .about-portrait__green {
+    position: absolute;
+    inset: 0;
+    background: oklch(0.88 0.22 125 / 0.54);
+    mix-blend-mode: color;
+    transition: opacity 700ms ease;
+  }
+
+  .about-portrait__dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, oklch(0.88 0.22 125 / 0.72) 1px, transparent 1.35px);
+    background-size: 6px 6px;
+    mix-blend-mode: screen;
+    opacity: 0.62;
+    mask-image: linear-gradient(to bottom, black 5%, transparent 72%);
+    transition:
+      opacity 700ms ease,
+      background-size 700ms ease;
+  }
+
+  .about-portrait:hover img {
+    filter: grayscale(0.2) contrast(1.04) brightness(0.92);
+    transform: scale(1.025);
+  }
+
+  .about-portrait:hover .about-portrait__green {
+    opacity: 0.18;
+  }
+
+  .about-portrait:hover .about-portrait__dots {
+    background-size: 8px 8px;
+    opacity: 0.22;
+  }
+
+  .portfolio-case .markedu-grid {
+    background-image:
+      linear-gradient(to right, oklch(0.97 0.01 90 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.97 0.01 90 / 0.08) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .teardown-arrow {
+    animation: teardown-arrow-mobile 1.8s ease-in-out infinite;
+  }
+
+  @keyframes teardown-arrow-mobile {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(7px) scale(1.1);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .teardown-arrow {
+      animation-name: teardown-arrow-desktop;
+    }
+
+    @keyframes teardown-arrow-desktop {
+      0%,
+      100% {
+        transform: translateX(0) scale(1);
+      }
+      50% {
+        transform: translateX(7px) scale(1.1);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-portrait img,
+    .about-portrait__green,
+    .about-portrait__dots {
+      transition: none;
+    }
+
+    .teardown-arrow {
+      animation: none;
+    }
   }
 }

@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkWorkchainRouteImport } from './routes/work.workchain'
+import { Route as WorkSpacefyAiRouteImport } from './routes/work.spacefy-ai'
+import { Route as WorkOrangeFlowersRouteImport } from './routes/work.orange-flowers'
+import { Route as WorkMarkeduRouteImport } from './routes/work.markedu'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkWorkchainRoute = WorkWorkchainRouteImport.update({
+  id: '/work/workchain',
+  path: '/work/workchain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSpacefyAiRoute = WorkSpacefyAiRouteImport.update({
+  id: '/work/spacefy-ai',
+  path: '/work/spacefy-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkOrangeFlowersRoute = WorkOrangeFlowersRouteImport.update({
+  id: '/work/orange-flowers',
+  path: '/work/orange-flowers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkMarkeduRoute = WorkMarkeduRouteImport.update({
+  id: '/work/markedu',
+  path: '/work/markedu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/work/markedu': typeof WorkMarkeduRoute
+  '/work/orange-flowers': typeof WorkOrangeFlowersRoute
+  '/work/spacefy-ai': typeof WorkSpacefyAiRoute
+  '/work/workchain': typeof WorkWorkchainRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/work/markedu': typeof WorkMarkeduRoute
+  '/work/orange-flowers': typeof WorkOrangeFlowersRoute
+  '/work/spacefy-ai': typeof WorkSpacefyAiRoute
+  '/work/workchain': typeof WorkWorkchainRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/work/markedu': typeof WorkMarkeduRoute
+  '/work/orange-flowers': typeof WorkOrangeFlowersRoute
+  '/work/spacefy-ai': typeof WorkSpacefyAiRoute
+  '/work/workchain': typeof WorkWorkchainRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/work/markedu'
+    | '/work/orange-flowers'
+    | '/work/spacefy-ai'
+    | '/work/workchain'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/work/markedu'
+    | '/work/orange-flowers'
+    | '/work/spacefy-ai'
+    | '/work/workchain'
+  id:
+    | '__root__'
+    | '/'
+    | '/work/markedu'
+    | '/work/orange-flowers'
+    | '/work/spacefy-ai'
+    | '/work/workchain'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WorkMarkeduRoute: typeof WorkMarkeduRoute
+  WorkOrangeFlowersRoute: typeof WorkOrangeFlowersRoute
+  WorkSpacefyAiRoute: typeof WorkSpacefyAiRoute
+  WorkWorkchainRoute: typeof WorkWorkchainRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +104,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/workchain': {
+      id: '/work/workchain'
+      path: '/work/workchain'
+      fullPath: '/work/workchain'
+      preLoaderRoute: typeof WorkWorkchainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/spacefy-ai': {
+      id: '/work/spacefy-ai'
+      path: '/work/spacefy-ai'
+      fullPath: '/work/spacefy-ai'
+      preLoaderRoute: typeof WorkSpacefyAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/orange-flowers': {
+      id: '/work/orange-flowers'
+      path: '/work/orange-flowers'
+      fullPath: '/work/orange-flowers'
+      preLoaderRoute: typeof WorkOrangeFlowersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/markedu': {
+      id: '/work/markedu'
+      path: '/work/markedu'
+      fullPath: '/work/markedu'
+      preLoaderRoute: typeof WorkMarkeduRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WorkMarkeduRoute: WorkMarkeduRoute,
+  WorkOrangeFlowersRoute: WorkOrangeFlowersRoute,
+  WorkSpacefyAiRoute: WorkSpacefyAiRoute,
+  WorkWorkchainRoute: WorkWorkchainRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
