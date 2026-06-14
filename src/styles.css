@@ -192,6 +192,7 @@
   }
 
   .hero-particle-word {
+    top: 0.1em;
     line-height: 0.78;
   }
 
