@@ -53,10 +53,10 @@ export function Hero() {
       >
         <motion.h1
           style={{ y: y1 }}
-          className="font-display uppercase text-[clamp(4.5rem,18vw,13.5rem)] leading-[0.78] md:text-[clamp(7rem,14vw,16rem)]"
+          className="font-display uppercase text-[13vw] leading-[0.84] md:text-[clamp(7rem,14vw,16rem)] md:leading-[0.78]"
         >
           <motion.span
-            className="block"
+            className="block text-[10vw] md:text-[inherit]"
             initial={{ y: 120, opacity: 0, rotateX: 18 }}
             animate={{ y: 0, opacity: 1, rotateX: 0 }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -65,7 +65,7 @@ export function Hero() {
           </motion.span>
           <InteractiveHeroWord />
           <motion.span
-            className="block"
+            className="block text-[11vw] md:text-[inherit]"
             initial={{ y: 120, opacity: 0, rotateX: 18 }}
             animate={{ y: 0, opacity: 1, rotateX: 0 }}
             transition={{ duration: 1.1, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
