@@ -73,6 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#08090b" },
       { title: "Polina Alekseeva — Product Designer" },
       {
         name: "description",
@@ -97,6 +98,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://alekseeva.xyz/og-image.png" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
+      },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
