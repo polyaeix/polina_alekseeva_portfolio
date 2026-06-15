@@ -79,13 +79,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Product design, UX and digital systems portfolio by Polina Alekseeva.",
       },
       { name: "author", content: "Polina Alekseeva" },
+      { property: "og:site_name", content: "Polina Alekseeva Portfolio" },
       { property: "og:title", content: "Polina Alekseeva — Product Designer" },
       {
         property: "og:description",
         content: "Product design, UX and digital systems portfolio by Polina Alekseeva.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://alekseeva.xyz/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Polina Alekseeva portfolio preview with designer of digital systems headline.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://alekseeva.xyz/og-image.png" },
     ],
     links: [
       {

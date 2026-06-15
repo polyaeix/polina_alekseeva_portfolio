@@ -22,7 +22,9 @@ export const Route = createFileRoute("/")({
         content: "Selected product, web and digital systems work by Polina Alekseeva.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://alekseeva.xyz/" },
     ],
+    links: [{ rel: "canonical", href: "https://alekseeva.xyz/" }],
   }),
   component: Index,
 });
