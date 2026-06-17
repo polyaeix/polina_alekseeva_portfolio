@@ -193,8 +193,9 @@ function MarkeduCase() {
           </div>
           <p className="mt-10 max-w-4xl text-xl leading-relaxed md:text-3xl">
             MarkEDU is a European marketing education platform offering intensive courses,
-            accredited programs and professional learning formats. I created the digital product and
-            connected the customer-facing experience with the operational system behind it.
+            accredited programs and professional learning formats. I created the digital product,
+            shaped the conversion path and connected the customer-facing experience with the CRM,
+            payment and communication system behind it.
           </p>
         </div>
       </section>
@@ -218,9 +219,9 @@ function MarkeduCase() {
             </p>
             <div className="mt-12 grid gap-4 md:grid-cols-3">
               {[
-                "Complex offer structure",
-                "Disconnected operational tools",
-                "Need for a recognizable, scalable brand",
+                "Complex offer structure and multiple audience types",
+                "Disconnected CRM, payment and communication steps",
+                "Need for a recognizable, scalable interface and brand system",
               ].map((item) => (
                 <div
                   key={item}
@@ -251,7 +252,7 @@ function MarkeduCase() {
               <p className="mt-10 max-w-3xl text-lg leading-relaxed text-cream/65 md:text-2xl">
                 The opportunity was to turn the website into a shared foundation for brand,
                 conversion and daily operations, making the experience clearer for visitors and more
-                manageable for the team.
+                manageable for the team without adding manual work behind the scenes.
               </p>
             </Reveal>
           </div>
@@ -478,9 +479,9 @@ function MarkeduCase() {
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              "CRM configured around the client's real sales process",
-              "Stripe payments connected to the customer journey",
-              "GetCourse email flows with a branded email design",
+              "CRM configured around the client's real sales and lead-management process",
+              "Stripe payments connected to the customer journey and handoff logic",
+              "GetCourse email flows with branded communication templates",
             ].map((item) => (
               <div key={item} className="flex gap-4 border-t border-border pt-5">
                 <Check className="shrink-0 text-acid" size={18} />

@@ -10,16 +10,16 @@ import { Contact } from "@/components/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Polina Alekseeva — UI/UX & Digital Designer, Prague" },
+      { title: "Polina Alekseeva — Product Designer, Prague" },
       {
         name: "description",
         content:
-          "Portfolio of Polina Alekseeva — product and digital designer connecting UX/UI, websites, frontend and business systems.",
+          "Portfolio of Polina Alekseeva — product designer connecting B2B UX, web platforms, frontend and business systems.",
       },
-      { property: "og:title", content: "Polina Alekseeva — UI/UX & Digital Designer" },
+      { property: "og:title", content: "Polina Alekseeva — Product Designer" },
       {
         property: "og:description",
-        content: "Selected product, web and digital systems work by Polina Alekseeva.",
+        content: "Selected B2B product, web platform and digital systems work by Polina Alekseeva.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://alekseeva.xyz/" },

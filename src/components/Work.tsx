@@ -312,47 +312,47 @@ const WorkChainVisual = (
 const projects: Project[] = [
   {
     n: "01",
-    year: "2026",
-    title: "Markedu",
-    sub: "Educational platform",
-    role: "Identity · Web · Automation",
-    tags: ["Identity", "Web"],
-    internalLink: "/work/markedu",
-    span: "wide",
-    visual: MarkeduVisual,
-  },
-  {
-    n: "02",
-    year: "2025",
-    title: "Orange Flowers",
-    sub: "Florist e-commerce",
-    role: "UI/UX · Redesign",
-    tags: ["E-commerce"],
-    internalLink: "/work/orange-flowers",
-    span: "tall",
-    visual: BloomVisual,
-  },
-  {
-    n: "03",
     year: "2025",
     title: "SpacefyAI",
-    sub: "AI planogram tool",
-    role: "Product · UX",
-    tags: ["Product", "AI"],
+    sub: "Private B2B product",
+    role: "Product · UX · Frontend",
+    tags: ["B2B", "Product"],
     internalLink: "/work/spacefy-ai",
     span: "full",
     visual: <SpacefyVisual />,
   },
   {
-    n: "04",
+    n: "02",
     year: "2024",
     title: "WorkChain",
-    sub: "Web3 hiring startup",
+    sub: "Mobile + web startup",
     role: "Product · UX/UI",
-    tags: ["Startup", "Web3"],
+    tags: ["Fintech", "Mobile"],
     internalLink: "/work/workchain",
     span: "wide",
     visual: WorkChainVisual,
+  },
+  {
+    n: "03",
+    year: "2026",
+    title: "Markedu",
+    sub: "Platform + operations",
+    role: "Web · CRM · Payments",
+    tags: ["Automation", "CRM"],
+    internalLink: "/work/markedu",
+    span: "wide",
+    visual: MarkeduVisual,
+  },
+  {
+    n: "04",
+    year: "2025",
+    title: "Orange Flowers",
+    sub: "Florist e-commerce",
+    role: "UX/UI · Conversion",
+    tags: ["E-commerce", "Redesign"],
+    internalLink: "/work/orange-flowers",
+    span: "tall",
+    visual: BloomVisual,
   },
 ];
 
@@ -505,16 +505,16 @@ export function Work() {
 
         {/* alternating grid */}
         <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <div className="col-span-12 md:col-span-7">
+          <div className="col-span-12">
             <ProjectTile p={projects[0]} />
           </div>
-          <div className="col-span-12 md:col-span-5 md:mt-32">
+          <div className="col-span-12 mt-12 md:col-span-7">
             <ProjectTile p={projects[1]} />
           </div>
-          <div className="col-span-12 mt-12">
+          <div className="col-span-12 mt-12 md:col-span-5 md:mt-32">
             <ProjectTile p={projects[2]} />
           </div>
-          <div className="col-span-12 md:col-span-7 md:col-start-6 mt-12">
+          <div className="col-span-12 mt-12 md:col-span-7 md:col-start-6">
             <ProjectTile p={projects[3]} />
           </div>
         </div>

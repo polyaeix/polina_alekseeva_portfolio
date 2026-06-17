@@ -191,8 +191,8 @@ function WorkChainCase() {
               </h2>
               <p className="mt-10 max-w-4xl text-xl leading-relaxed text-black/60 md:text-3xl">
                 Freelancers need confidence they will be paid. Clients need confidence that agreed
-                work will be delivered. WorkChain explored how transparent agreements and automated
-                payments could reduce risk for both sides.
+                work will be delivered. WorkChain explored how transparent agreements, payment
+                states and mobile-first product flows could reduce risk for both sides.
               </p>
             </Reveal>
           </div>
@@ -209,7 +209,11 @@ function WorkChainCase() {
                 "Fragile agreements",
                 "Expectations and responsibilities are often scattered across conversations.",
               ],
-              ["03", "Payment risk", "Delayed or disputed payments erode trust on both sides."],
+              [
+                "03",
+                "Payment risk",
+                "Delayed or disputed payments erode trust and make the whole platform feel unsafe.",
+              ],
             ].map(([n, title, copy]) => (
               <article key={n} className="bg-white p-6 md:min-h-64">
                 <span className="font-mono text-[9px]" style={{ color: blue }}>

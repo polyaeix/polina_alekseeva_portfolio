@@ -79,9 +79,9 @@ export function Hero() {
             style={{ y: y3 }}
             className="col-span-12 md:col-span-5 md:col-start-7 text-balance text-lg md:text-2xl text-cream/85 font-light leading-snug"
           >
-            <span className="font-serif italic text-cream">Polina Alekseeva</span> — independent
-            UI/UX & digital designer building websites, products and brand systems for teams that
-            take craft seriously.
+            <span className="font-serif italic text-cream">Polina Alekseeva</span> — product
+            designer working across B2B platforms, complex UX flows, automation and frontend
+            implementation.
           </motion.p>
         </div>
 

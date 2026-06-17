@@ -241,8 +241,8 @@ function SpacefyCase() {
 
           <div className="grid gap-8 border-t border-border pt-7 md:grid-cols-12">
             <p className="max-w-2xl text-xl leading-relaxed md:col-span-7 md:text-3xl">
-              A private AI-assisted retail planning product shaped across product ownership,
-              experience design and frontend development.
+              A private B2B AI-assisted planning product shaped from ambiguous requirements into
+              usable product flows, interface logic and a working frontend MVP.
             </p>
             <div className="grid grid-cols-2 gap-5 font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground md:col-span-5">
               <div>
@@ -274,9 +274,9 @@ function SpacefyCase() {
               </h2>
               <p className="mt-10 max-w-4xl text-lg leading-relaxed text-cream/65 md:text-2xl">
                 SpacefyAI is a company-delivered product for specialist retail workflows. My work
-                connected product direction, UX decisions and frontend implementation, helping move
-                the idea toward a coherent tool that could be demonstrated, tested and developed
-                further.
+                connected product direction, user roles, UX decisions and frontend implementation,
+                helping move the idea toward a coherent B2B tool that could be demonstrated, tested
+                and developed further.
               </p>
             </Reveal>
           </div>
@@ -320,9 +320,9 @@ function SpacefyCase() {
               </p>
               {[
                 "Turn an early concept into an understandable product structure",
-                "Balance specialist workflows with an approachable interface",
-                "Create reusable patterns for a product expected to evolve",
-                "Keep product, design and frontend decisions aligned",
+                "Map specialist workflows, roles, states and edge cases",
+                "Create reusable UI patterns for a product expected to evolve",
+                "Keep product, UX and frontend decisions aligned through fast iteration",
               ].map((item) => (
                 <div
                   key={item}
@@ -356,7 +356,7 @@ function SpacefyCase() {
               <p className="mt-10 max-w-3xl text-lg leading-relaxed text-cream/60">
                 The product itself remains confidential. These abstracted artefacts show how I
                 connected business goals, user needs, interface decisions and implementation without
-                exposing proprietary workflows or technology.
+                exposing proprietary workflows, data structures or technology.
               </p>
             </Reveal>
           </div>

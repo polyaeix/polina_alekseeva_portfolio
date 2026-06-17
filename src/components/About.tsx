@@ -3,14 +3,14 @@ import { useRef } from "react";
 import { ParallaxLayer, Reveal } from "./MotionPrimitives";
 
 const marquee = [
-  "Websites",
-  "Brand Identity",
+  "B2B Products",
+  "User Flows",
   "Product Design",
   "UX Research",
-  "Landing Pages",
+  "Conversion",
   "Web Apps",
   "Design Systems",
-  "Email Campaigns",
+  "Automation",
 ];
 
 const experience = [
@@ -84,8 +84,8 @@ export function About() {
         <motion.div style={{ y }} className="col-span-12 space-y-12 md:col-span-10">
           <Reveal>
             <p className="max-w-6xl text-balance font-display text-3xl uppercase leading-[1.0] md:text-6xl">
-              I turn complex ideas into <span className="text-acid">working digital products</span>,
-              websites and business systems that{" "}
+              I turn complex business ideas into{" "}
+              <span className="text-acid">working digital products</span>, UX flows and systems that{" "}
               <span className="font-serif italic lowercase text-cream/90">
                 do the heavy lifting
               </span>
@@ -97,9 +97,10 @@ export function About() {
             <div className="space-y-12">
               <Reveal delay={0.06}>
                 <p className="max-w-4xl text-lg leading-relaxed text-cream/60 md:text-2xl">
-                  My work connects product thinking, UX/UI, visual identity and implementation. I am
+                  My work connects product thinking, UX/UI, visual systems and implementation. I am
                   especially useful when a team needs to shape an early idea, simplify a complex
-                  workflow or connect the customer experience with the operational system behind it.
+                  workflow, design for business users or connect the customer experience with the
+                  operational system behind it.
                 </p>
               </Reveal>
 
@@ -146,11 +147,14 @@ export function About() {
                   </div>
                   <div>
                     <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-acid">
-                      Selected evidence
+                      Evidence for product roles
                     </div>
                     <p className="text-cream/85">Concept → working MVP in ~8 weeks</p>
                     <p className="mt-2 text-cream/85">
-                      Product, design and implementation in one process
+                      Mobile + web flows, CRM/payment automation and reusable UI patterns
+                    </p>
+                    <p className="mt-2 text-cream/85">
+                      Product, UX and frontend decisions kept in one delivery process
                     </p>
                     <a
                       href="/cv-PolinaAlekseeva.pdf"
@@ -190,8 +194,8 @@ export function About() {
                 k: "Services",
                 v: [
                   "Product strategy & ownership",
-                  "Web & product design",
-                  "UX research & flows",
+                  "B2B product and UX flows",
+                  "Design systems and interface logic",
                   "Frontend & automation",
                 ],
               },
